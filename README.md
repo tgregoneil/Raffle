@@ -1,4 +1,4 @@
-Raffler for Austin PHP Meetup Group.  raffler.php is the driver.  
+Raffler for Austin PHP Meetup Group.  raffle.php is the driver.  
 Separate each name with a newline in the textarea.  Specify number of winners
 (1 to number_of_entrants-1).  Click Start.
 
