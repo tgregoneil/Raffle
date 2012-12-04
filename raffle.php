@@ -42,6 +42,7 @@ function showNamesForm ($names) {
     ?>
     <form method='post' action='raffle.php'>
         Free stuff is good.
+        Enter names:
         <br/>
         <textarea name='entries' cols='40' rows='20' <?if(strlen($namestr) == 0) {echo "autofocus";}?>><?echo $namestr?></textarea>
         <br/>
