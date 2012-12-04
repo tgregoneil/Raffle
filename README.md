@@ -4,6 +4,6 @@ Separate each name with a newline in the textarea.  Specify number of winners
 
 A page with the entries, a green Start button and a maze will be presented.  
 Click the green Start button to observe the fuse making its way through the maze 
-to eliminate all entrants except for the number of winners.
+to zap all entrants except the winners.
 
 Click 'Show Winners' button to see the winners.
