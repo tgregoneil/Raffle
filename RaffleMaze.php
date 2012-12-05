@@ -31,13 +31,15 @@ protected $numpathstoentrants;
 protected $MP;
 
 //---------------------
-public function __construct ($names, $numwin, $colors, $x_dim, $y_dim, $cell_size) {
+public function __construct ($names, $numwin, $colors, $textcolors, $x_dim, $y_dim, $cell_size) {
 
     mt_srand (time ());
 
     $this->names = $names;
     $this->numwin = $numwin;
+
     $this->colors = $colors;
+    $this->textcolors = $textcolors;
 
     $this->numentrants = sizeof ($names);
     $this->numlosers = $this->numentrants - $numwin;
@@ -440,9 +442,11 @@ protected function showWinners  () {
                 $wnr = $this->winners [$i];
 
                 $clr = $this->colors [$wnr];
+                $tclr = $this->textcolors [$wnr];
+
                 $name = $this->names [$wnr];
 
-                $lbl = "<input style='background-color:$clr;border-radius:4px' type='submit' value='$name' />";
+                $lbl = "<input style='font-weight:bold;color:$tclr;background-color:$clr;border-radius:4px' type='submit' value='$name' />";
 
                 echo $lbl;
 

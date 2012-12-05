@@ -7,3 +7,5 @@ Click the green Start button to observe the fuse making its way through the maze
 to zap all entrants except the winners.
 
 Click 'Show Winners' button to see the winners.
+
+Raffler is a simple Raffle program with a sizzling visual interface.  The sizzle part is where the fuse randomly makes its way to the randomly chosen losers.  

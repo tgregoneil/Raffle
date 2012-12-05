@@ -17,7 +17,7 @@ public function __construct ($names, $numwin) {
 
     $this->startRaffle ();
 
-} // end public function __construct ()
+} // end function __construct ()
 
 
 //---------------------
@@ -29,7 +29,7 @@ public function startRaffle () {
     $this->genMaze ();
     $this->footer ();
 
-} // end public function startRaffle ()
+} // end function startRaffle ()
 
 
 //---------------------
@@ -43,7 +43,7 @@ public function header () {
         <body style='background-color=#f0f0f0'>
     <?
 
-} // end public function header ()
+} // end function header ()
 
 
 //---------------------
@@ -58,7 +58,7 @@ public function footer () {
         </html>
     <?
 
-} // end public function footer ()
+} // end function footer ()
 
 
 //---------------------
@@ -73,14 +73,18 @@ public function listEntries () {
             $res = $numnames <= 64 ? 64 : 32;
 
             $hexcolors = new RandHexColor ($res);
+
             $this->colors = $hexcolors->genRndColorSetUniq ($numnames);
+            $this->textcolors = $hexcolors->getTextColors ();
 
             for ($i = 0; $i < $numnames; $i++) {
 
                 $clr = $this->colors [$i];
+                $tclr = $this->textcolors [$i];
+
                 $name = $this->names [$i];
 
-                $lbl = "<input style='background-color:$clr;border-radius:4px' type='submit' value='$name' />";
+                $lbl = "<input style='font-weight:bold;background-color:$clr;color:$tclr;border-radius:4px' type='submit' value='$name' />";
 
                 echo $lbl;
 
@@ -90,7 +94,7 @@ public function listEntries () {
         </div>
     <?
 
-} // end public function listEntries ()
+} // end function listEntries ()
 
 
 //---------------------
@@ -98,18 +102,18 @@ public function showStart () {
 
     echo "</br>";
 
-    $start = "<input style='margin-left:75px;margin-top:10px;border-radius:12px;background-color:#00c261;font-size:150%' type='submit' value='START' onclick='lightfuse()'/>";
+    $start = "<input style='margin-left:100px;margin-top:10px;border-radius:12px;background-color:#ff4040;font-size:150%' type='submit' value='Light Fuse' onclick='lightfuse()'/>";
     echo $start;
 
-} // end public function showStart ()
+} // end function showStart ()
 
 
 
 //---------------------
 public function genMaze () {
 
-    $maze = new RaffleMaze ($this->names, $this->numwin, $this->colors, 20, 20, 12);
+    $maze = new RaffleMaze ($this->names, $this->numwin, $this->colors, $this->textcolors, 20, 20, 12);
 
-} // end public function genMaze ()
+} // end function genMaze ()
 
 }

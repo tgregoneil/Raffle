@@ -5,6 +5,7 @@ Class RandHexColor {
 protected $resolution;
 protected $numintervals;
 protected $colors_generated;
+protected $textcolors_generated;
 protected $maxcolors;
 
 //---------------------
@@ -15,8 +16,9 @@ public function __construct ($resolution) {
 
     $this->maxcolors = $this->numintervals * $this->numintervals * $this->numintervals;
     $this->colors_generated = array ();
+    $this->textcolors_generated = array ();
 
-} // end public function __construct ()
+} // end function __construct ()
 
 
 //---------------------
@@ -36,7 +38,15 @@ public function genRndColorSetUniq ($numcolors) {
     
     return array_keys ($this->colors_generated);
 
-} // end public function genRndColorSetUniq  ()
+} // end function genRndColorSetUniq  ()
+
+
+//---------------------
+public function getTextColors () {
+
+    return $this->textcolors_generated;
+
+} // end function getTextColors ()
 
 //---------------------
 public function genRndColorUniq () {
@@ -53,10 +63,14 @@ public function genRndColorUniq () {
 
     } // end while (1)
 
+    $tclr = hexdec ($c) ^ 0xffffff;
+    $tclr = '#' . dechex ($tclr);
+
+    $this->textcolors_generated [] = $tclr;
     return $c;
     
 
-} // end public function genRndColorUniq ()
+} // end function genRndColorUniq ()
 
 //---------------------
 public function genRndColor () {
@@ -67,7 +81,7 @@ public function genRndColor () {
 
     return '#'.$r.$g.$b;
     
-} // end public function genRndColor ()
+} // end function genRndColor ()
 
 
 //---------------------

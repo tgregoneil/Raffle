@@ -23,6 +23,8 @@ if ($_POST) {
 } else {
 
     $names = array ('Calvin', 'Hobbes', 'Susie Derkins', 'Mr. Bun', 'Mom', 'Dad', 'Miss Wormwood');
+    shuffle ($names);
+
     showNamesForm ($names);
 
 } // end if ($_POST)
