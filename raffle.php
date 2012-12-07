@@ -11,12 +11,14 @@ if ($_POST) {
     } else {
 
         $numnames = sizeof ($names);
+        $numwin = mt_rand (1, sizeof ($names) - 1);
+
         $errmsg = "<p style='color:red'>"
-        . "Number of winners must be greater than 0 and less than number of names ($numnames)"
+        . "Number of winners must be greater than 0 and less than number of names ($numnames).  Let's try '2', for example."
         . "</p>";
         echo $errmsg;
 
-        showNamesForm ($names);
+        showNamesForm ($names, "'2'");
 
     } // end if (getNamesNumWinners ($names, $numwin);)
     
@@ -25,14 +27,15 @@ if ($_POST) {
     $names = array ('Calvin', 'Hobbes', 'Susie Derkins', 'Mr. Bun', 'Mom', 'Dad', 'Miss Wormwood');
     shuffle ($names);
 
-    showNamesForm ($names);
+    $numwin = mt_rand (1, sizeof ($names) - 1);
+    showNamesForm ($names, "'$numwin'");
 
 } // end if ($_POST)
 
 
 
 //---------------------
-function showNamesForm ($names) {
+function showNamesForm ($names, $numwin) {
 
     $namestr = "";
     foreach ($names as $name) {
@@ -41,6 +44,15 @@ function showNamesForm ($names) {
 
     } // end foreach ($names as $name)
 
+    $inp = "<input type='text' name='numwin' style='width:5em'";
+    $inp .= " value=" . $numwin;
+    
+    if (strlen($namestr) > 0) {
+
+        $inp .= "autofocus";
+
+    } // end if (strlen($namestr) > 0)
+    
     ?>
     <form method='post' action='raffle.php'>
         Free stuff is good.  Enter names:
@@ -48,7 +60,7 @@ function showNamesForm ($names) {
         <textarea name='entries' cols='40' rows='20' <?if(strlen($namestr) == 0) {echo "autofocus";}?>><?echo $namestr?></textarea>
         <br/>
         Number of winners:
-        <input name='numwin' style='width:5em' type='text' <?if(strlen($namestr) > 0){echo "autofocus";}?>/>
+        <?echo $inp?>
         <br/>
         <input type='submit' value='Start'/>
     </form>
