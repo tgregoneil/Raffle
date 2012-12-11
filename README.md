@@ -1,11 +1,10 @@
-Raffler for Austin PHP Meetup Group.  raffle.php is the driver.  
-Separate each name with a newline in the textarea.  Specify number of winners
-(1 to number_of_entrants-1).  Click Start.
+Raffle for Austin PHP Meetup Group.  
+Raffle is a simple Raffle program where a fuse randomly makes its way through a maze to the randomly zap the losers of the contest.
 
-A page with the entries, a green Start button and a maze will be presented.  
-Click the green Start button to observe the fuse making its way through the maze 
-to zap all entrants except the winners.
+Separate each name with a newline in the textarea.  Specify number of winners for the contest (1 to number_of_entrants-1).  Click Start.
 
-Click 'Show Winners' button to see the winners.
+A page with the entries, a red 'Light Fuse' button and a maze will be presented.  
+Click the red 'Light Fuse' button to observe the fuse making its way through the maze to zap all the losers.
 
-Raffler is a simple Raffle program with a sizzling visual interface.  The sizzle part is where the fuse randomly makes its way to the randomly chosen losers.  
+Click 'Show Winners' button to see the remaining winners.
+raffle.php is the driver.  
