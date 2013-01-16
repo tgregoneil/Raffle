@@ -1,4 +1,3 @@
-Raffle for Austin PHP Meetup Group.  
 Raffle is a simple Raffle program where a fuse randomly makes its way through a maze to the randomly zap the losers of the contest.
 
 Separate each name with a newline in the textarea.  Specify number of winners for the contest (1 to number_of_entrants-1).  Click Start.
