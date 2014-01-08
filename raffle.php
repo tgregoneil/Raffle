@@ -1,6 +1,6 @@
 <?php    // raffle.php
 
-require_once 'Raffle.php';
+require_once 'Raffle.php';  // Start, GenMaze, etc.
 
 if ($_POST) {
 
