@@ -1,4 +1,4 @@
-Raffle is a simple Raffle program where a lit fuse randomly makes its way through a maze to randomly zap the losers of the contest.
+Raffle is a simple Raffle program where a lit fuse randomly makes its way through a maze to randomly zap the losers of the contest.  
 
 Separate each name with a newline in the textarea.  Specify number of winners for the contest (1 to number_of_entrants-1).  Click Start.
 
